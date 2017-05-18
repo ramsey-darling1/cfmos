@@ -24,7 +24,7 @@ def main():
         records = open(user_home_path+'/cfmos_records.txt',"w+") 
     prev_record = records.read()
     count_list = prev_record.split(":")
-    prev_count = count_list[1] if count_list[1].isdigit() else False
+    prev_count = count_list[1] if count_list and len(count_list) > 1 and count_list[1].isdigit() else False
     diff_count = count - int(prev_count) if prev_count else 0
     if diff_count > 0:
         # We only need to do anything if there is at least 1 new message
