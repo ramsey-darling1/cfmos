@@ -1,0 +1,10 @@
+# copy this sample file to cfmos_config.py
+# replace placeholder content with real content
+# @rdar
+
+def re_mailbox_name():
+    return 'mailboxname'
+
+
+def send_email_to():
+    return 'email@address.com'
