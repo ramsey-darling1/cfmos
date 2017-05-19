@@ -31,7 +31,9 @@ def main():
         notification_string = ''
         lc = 1
         while lc <= diff_count:
-            notification_string += messages[-lc]
+            if messages[-lc].find('sending email') < 0:
+                #here we are collecting all new messages except "sending email" messages
+                notification_string += messages[-lc]
             lc += 1
         send_email(notification_string)
     #write new count
