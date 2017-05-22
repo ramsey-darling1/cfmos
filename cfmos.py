@@ -44,16 +44,16 @@ def main():
 
 
 def send_email(message):
-    print 'sending email'
     #send email notification
-    email = cfmos_config.send_email_to()
-    notification = smtplib.SMTP('localhost')
-    head = """From: Notification of mail on server<do-not-reply@cfmos.com>
-To: <%s>
-Subject: New mail on server
+    if message:
+        email = cfmos_config.send_email_to()
+        notification = smtplib.SMTP('localhost')
+        head = """From: Notification of mail on server<do-not-reply@cfmos.com>
+    To: <%s>
+    Subject: New mail on server
 
-""" % (email)
-    notification.sendmail('do-not-reply@cfmos.com',email,message)
+    """ % (email)
+        notification.sendmail('do-not-reply@cfmos.com',email,message)
     return
 
 #run main function
